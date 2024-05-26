@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vscode," />
+  <meta name="keywords" content="文献阅读," />
 
 
 
@@ -81,26 +81,23 @@
 
 
 
-<meta name="description" content="众所周知，keil5是初学C51和stm32的比较好的软件，但是使用起来还是有点不太方便，像代码没有自动补全功能，而且它的界面也不是很美观。而vscode上就有一个好用的插件，可以在vscode上对keil项目进行编译下载，并提供代码高亮，自动补全等功能。">
+<meta name="description" content="论文代码 前言作者的这篇论文让我眼前一亮，主要还是因为最近看的论文的模型设计都是在backbone的基础上设计一些复杂的模块然后添加到模型中去。而作者的这篇论文给我一种大道至简的感觉，在模型设计上作者只是用了3x3卷积，1x1卷积，以及relu激活函数，甚至连原本VGG中的pool都没有使用，模型的设计简洁但有力，在ImageNet上达到了超过80%的准确率，达到了了SOTA水平，并且运行速度显著">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用vscode优雅地写keil5的代码">
-<meta property="og:url" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/index.html">
+<meta property="og:title" content="RepVGG阅读笔记">
+<meta property="og:url" content="https://a1rcher.github.io/2024/05/26/RepVGG/index.html">
 <meta property="og:site_name" content="A1rcher&#39;s blog">
-<meta property="og:description" content="众所周知，keil5是初学C51和stm32的比较好的软件，但是使用起来还是有点不太方便，像代码没有自动补全功能，而且它的界面也不是很美观。而vscode上就有一个好用的插件，可以在vscode上对keil项目进行编译下载，并提供代码高亮，自动补全等功能。">
+<meta property="og:description" content="论文代码 前言作者的这篇论文让我眼前一亮，主要还是因为最近看的论文的模型设计都是在backbone的基础上设计一些复杂的模块然后添加到模型中去。而作者的这篇论文给我一种大道至简的感觉，在模型设计上作者只是用了3x3卷积，1x1卷积，以及relu激活函数，甚至连原本VGG中的pool都没有使用，模型的设计简洁但有力，在ImageNet上达到了超过80%的准确率，达到了了SOTA水平，并且运行速度显著">
 <meta property="og:locale">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/1.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/2.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/3.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/4.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/5.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/6.png">
-<meta property="og:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/7.png">
-<meta property="article:published_time" content="2023-03-13T05:48:23.000Z">
-<meta property="article:modified_time" content="2023-03-19T13:59:54.000Z">
+<meta property="og:image" content="https://a1rcher.github.io/2024/05/26/RepVGG/picture1.png">
+<meta property="og:image" content="https://a1rcher.github.io/2024/05/26/RepVGG/picture2.png">
+<meta property="og:image" content="https://a1rcher.github.io/2024/05/26/RepVGG/picture3.png">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8">
+<meta property="article:published_time" content="2024-05-26T15:46:41.000Z">
+<meta property="article:modified_time" content="2024-05-26T15:58:43.080Z">
 <meta property="article:author" content="A1rcher">
-<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="文献阅读">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/1.png">
+<meta name="twitter:image" content="https://a1rcher.github.io/2024/05/26/RepVGG/picture1.png">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://A1rcher.github.io/2023/03/13/ÓÃvscodeÓÅÑÅµØÐ´keil5µÄ´úÂë/"/>
+  <link rel="canonical" href="https://A1rcher.github.io/2024/05/26/RepVGG/"/>
 
 
 
 
 
-  <title>用vscode优雅地写keil5的代码 | A1rcher's blog</title>
+  <title>RepVGG阅读笔记 | A1rcher's blog</title>
   
 
 
@@ -304,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://A1rcher.github.io/2023/03/13/%C3%93%C3%83vscode%C3%93%C3%85%C3%91%C3%85%C2%B5%C3%98%C3%90%C2%B4keil5%C2%B5%C3%84%C2%B4%C3%BA%C3%82%C3%AB/">
+    <link itemprop="mainEntityOfPage" href="https://A1rcher.github.io/2024/05/26/RepVGG/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="A1rcher">
@@ -321,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用vscode优雅地写keil5的代码</h1>
+          <h1 class="post-title" itemprop="name headline">RepVGG阅读笔记</h1>
         
 
         <div class="post-meta">
@@ -333,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-03-13T13:48:23+08:00">
-                2023-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-05-26T23:46:41+08:00">
+                2024-05-26
               </time>
             
 
@@ -343,28 +340,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">技巧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -387,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  343 字
+                  1.6k 字
                 </span>
               
 
@@ -412,19 +387,48 @@
       
 
       
-        <p>众所周知，keil5是初学C51和stm32的比较好的软件，但是使用起来还是有点不太方便，像代码没有自动补全功能，而且它的界面也不是很美观。而vscode上就有一个好用的插件，可以在vscode上对keil项目进行编译下载，并提供代码高亮，自动补全等功能。<br><span id="more"></span></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在vscode的扩展商店搜索<code>Keil Assistant</code>,点击“安装”。<br><img src="1.png" alt></p>
-<p>配置keil5软件的路径，如下图：<br><img src="2.png" alt></p>
-<p>在下图界面键入你计算机中keil5软件的绝对路径：<br><img src="3.png" alt></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
-<li>在keil5软件中新建一个项目，添加好文件，头文件路径。</li>
-<li>在该项目的文件夹用vscode打开，界面如下：<br><img src="4.png" alt><br>在资源管理器下会出现<code>KEIL UVISION PROHECT</code>这一目录。</li>
-<li>在该目录下就可以开始编写代码了，有自动补全功能：<br><img src="5.png" alt></li>
-<li>代码写完后，在左侧资源管理器进行编译下载，下图从左往右依次是<code>编译</code> <code>下载</code> <code>重新编译</code>：<br><img src="6.png" alt><br>在终端出现<code>0 Error(s)</code>表示编译成功了：<br><img src="7.png" alt></li>
-<li>最后烧入单片机。</li>
-</ol>
-<h2 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h2><p>如果直接在vscode新建文件，记得在编译前先去keil5软件把新建的文件导入并保存，不然在vscode编译会报错。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然要同时操作keil5和vscode，但在vscode里打代码是真的爽。</p>
+        <p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2101.03697">论文</a><br><a target="_blank" rel="noopener" href="https://github.com/DingXiaoH/RepVGG">代码</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作者的这篇论文让我眼前一亮，主要还是因为最近看的论文的模型设计都是在backbone的基础上设计一些复杂的模块然后添加到模型中去。而作者的这篇论文给我一种大道至简的感觉，在模型设计上作者只是用了3x3卷积，1x1卷积，以及relu激活函数，甚至连原本VGG中的pool都没有使用，模型的设计简洁但有力，在ImageNet上达到了超过80%的准确率，达到了了SOTA水平，并且运行速度显著增加。其模型的核心在于结构重参数化。</p>
+<h1 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h1><p>复杂的卷积网络能带来更高的精度，但其中的缺点也十分的明显：</p>
+<ul>
+<li>复杂的多分支设计使得模型难以实现和定制，并且导致推理速度和内存的利用率降低。</li>
+<li>一些组件，像深度卷积，虽然降低了模型的FLOPs，但是在实际运行中可能并不能比那些老牌的模型更快。这主要是因为这些组件增加了内存的访问量。<br>因此，目前很多的模型还是以VGG以及ResNet为backbone设计的。</li>
+</ul>
+<h1 id="构建RepVGG"><a href="#构建RepVGG" class="headerlink" title="构建RepVGG"></a>构建RepVGG</h1><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>在正式介绍RepVGG之前，先来介绍一下它的优点：</p>
+<ul>
+<li>该模型类似于VGG，没有任何的分支，就是说对于每一层它的输入都是前一层的输出，它的输出都是后一层的输入。感觉就像一链表。</li>
+<li>模型的主体仅使用3x3卷积和ReLU。</li>
+<li>具体架构的实例化是简洁的。</li>
+</ul>
+<h2 id="为了快速、省内存和灵活性"><a href="#为了快速、省内存和灵活性" class="headerlink" title="为了快速、省内存和灵活性"></a>为了快速、省内存和灵活性</h2><p>前面提到目前常用的backbone模型有VGG和ResNet，但为什么作者选择了VGG呢？主要是考虑了三个方面：</p>
+<ul>
+<li><strong>快速</strong>：VGG中只是用了3x3卷积，而3x3卷积是非常快的。在GPU上，3x3卷积的计算密度是1x1卷积和5x5卷积的四倍。同时VGG的单路架构非常块，因为并行度高。<img src="picture1.png" alt="picture1"></li>
+<li><strong>省内存</strong>：VGG的单路架构省内存。而ResNet的shortcut虽然不占计算量，但却增加了一倍的显存占用。</li>
+<li><strong>灵活性好</strong>：单路架构的灵活性更好，容易改变各层的宽度，方便剪枝等操作。</li>
+</ul>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>既然要让模型有更高的性能，同时还有快速的推理速度，作者就提出了一个解决方案，那就是在模型训练时模型具有多分支结构，能提高模型的性能；而在模型推理时利用结构重重参数化技术使模型转换成单路结构，使得模型的推理速度更快。<br>基于上述分析，作者提出了RepVGG的结构：<br><img src="picture2.png" alt="picture2"><br>根据上图就可以写出训练时每一层的输出公式：</p>
+<script type="math/tex; mode=display">
+y = x + f(x) + g(x)</script><p>其中，$f(\cdot)$ 表示3x3卷积分支的操作，$g(\cdot)$ 表示1x1卷积分支的操作。</p>
+<p>单看这给结构就给人一种简约的感觉，剩下的难题就是如何把多分支的训练模型转换成单路的推理模型，也就是如何设计结构重参数化。</p>
+<h2 id="结构重参数化"><a href="#结构重参数化" class="headerlink" title="结构重参数化"></a>结构重参数化</h2><p>话不多说，先给出具体的流程图：<br><img src="picture3.png" alt="picture3"><br>从图中可以看出，结构重参数化主要分为两步：一是融合卷积和BN层，二是各分支参数相加。</p>
+<h3 id="融合卷积层和BN层"><a href="#融合卷积层和BN层" class="headerlink" title="融合卷积层和BN层"></a>融合卷积层和BN层</h3><p>这一步的作用，我个人认为主要是为了把各分支的参数的形状统一，方便后续各分支参数相加。</p>
+<p>首先，令输入为$X$，卷积层的参数为$W$，这样卷积层的公式就是：</p>
+<script type="math/tex; mode=display">
+Conv(X) = X*W</script><p>上式中，$*$为卷积算子，这里的卷积层没有偏置$b$，有偏置计算过程也是一致的。</p>
+<p>在BN层中，令$\mu,\sigma,\gamma,\beta$分别为BN层的均值、标准差、学习缩放因子以及偏差。如此一来，BN层的公式为：</p>
+<script type="math/tex; mode=display">
+BN(X) = (X-\mu)\frac{\gamma}{\sigma} + \beta</script><p>把卷积公式带入BN层公式中，可得：</p>
+<script type="math/tex; mode=display">
+BN(Conv(X)) = (X*W-\mu)\frac{\gamma}{\sigma}  +\beta</script><p>令融合后的参数$W’$和$b’$分别为 ：</p>
+<script type="math/tex; mode=display">
+W' = \frac{\gamma}{\sigma}W</script><script type="math/tex; mode=display">
+b' = -\mu\frac{\gamma}{\sigma}+ \beta</script><p>显然，</p>
+<script type="math/tex; mode=display">
+BN(Conv(X)) = X*W' + b'</script><p>上式的形式与卷积层的公式一致，也就是把卷积层和BN层等效成了一个卷积层。这也是融合卷积层和BN层的作用。</p>
+<p>这步融合操作作者给出的代码如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_fuse_bn_tensor</span>(<span class="params">self, branch</span>):</span><br><span class="line">	<span class="keyword">if</span> branch <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">isinstance</span>(branch, nn.Sequential):</span><br><span class="line">		kernel = branch.conv.weight</span><br><span class="line">		running_mean = branch.bn.running_mean</span><br><span class="line">		running_var = branch.bn.running_var</span><br><span class="line">		gamma = branch.bn.weight</span><br><span class="line">		beta = branch.bn.bias</span><br><span class="line">		eps = branch.bn.eps</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">assert</span> <span class="built_in">isinstance</span>(branch, nn.BatchNorm2d)</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(self, <span class="string">'id_tensor'</span>):</span><br><span class="line">			input_dim = self.in_channels // self.groups</span><br><span class="line">			kernel_value = np.zeros((self.in_channels, input_dim, <span class="number">3</span>, <span class="number">3</span>),    dtype=np.float32)</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.in_channels):</span><br><span class="line">				kernel_value[i, i % input_dim, <span class="number">1</span>, <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">			self.id_tensor = torch.from_numpy(kernel_value).to(branch.weight.device)</span><br><span class="line">		kernel = self.id_tensor</span><br><span class="line">		running_mean = branch.running_mean</span><br><span class="line">		running_var = branch.running_var</span><br><span class="line">		gamma = branch.weight</span><br><span class="line">		beta = branch.bias</span><br><span class="line">		eps = branch.eps</span><br><span class="line">	std = (running_var + eps).sqrt()</span><br><span class="line">	t = (gamma / std).reshape(-<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">	<span class="keyword">return</span> kernel * t, beta - running_mean * gamma / std</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>对于3x3卷积的分支，融合3x3卷积和BN层后，获得的参数结构与3x3一致。<br>对于1x1卷积分支，1x1卷积相当于一个周围为0，中心有数值的3x3卷积，因此融合后的卷积核也是周围为0，中心有数值。<br>对于identity层，也就是原始输入，也可以转化成3x3的卷积层。具体地，identity可以看成1x1卷积层，每个卷积核中只有一个通道的数值为1，其他的全为零，这样经过卷积后，输入仍等于原始输入。有了1<br>x1卷积再转化成3x3卷积就容易了。最终融合后的参数仍是3x3卷积的形式。</p>
+<h3 id="多分支转化为单路"><a href="#多分支转化为单路" class="headerlink" title="多分支转化为单路"></a>多分支转化为单路</h3><p>上一步把各分支的参数都重新化为了3x3卷积的样子，这样只要把各分支的参数逐元素相加就可以得到结构重参数化后的参数了，这个参数也是3x3卷积的样子。如此一来，多分支结构就被转化成了单路结构。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>RepVGG是一项在backbone上的工作，它那简洁而有力的结构，真不错。 <span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
       
     </div>
@@ -452,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vscode/" rel="tag"><i class="fa fa-tag"></i> vscode</a>
+            <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" rel="tag"><i class="fa fa-tag"></i> 文献阅读</a>
           
         </div>
       
@@ -465,15 +469,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2023/11/29/reading-basnet/" rel="next" title="BasNet论文研读">
+                <i class="fa fa-chevron-left"></i> BasNet论文研读
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/03/20/Linux/" rel="prev" title="Linux命令">
-                Linux命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -640,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E9%86%92"><span class="nav-number">3.</span> <span class="nav-text">提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BC%95%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">问题引入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BARepVGG"><span class="nav-number">3.</span> <span class="nav-text">构建RepVGG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">3.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BA%86%E5%BF%AB%E9%80%9F%E3%80%81%E7%9C%81%E5%86%85%E5%AD%98%E5%92%8C%E7%81%B5%E6%B4%BB%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">为了快速、省内存和灵活性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">3.3.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E9%87%8D%E5%8F%82%E6%95%B0%E5%8C%96"><span class="nav-number">3.4.</span> <span class="nav-text">结构重参数化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9E%8D%E5%90%88%E5%8D%B7%E7%A7%AF%E5%B1%82%E5%92%8CBN%E5%B1%82"><span class="nav-number">3.4.1.</span> <span class="nav-text">融合卷积层和BN层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%8D%95%E8%B7%AF"><span class="nav-number">3.4.2.</span> <span class="nav-text">多分支转化为单路</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -864,6 +868,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
